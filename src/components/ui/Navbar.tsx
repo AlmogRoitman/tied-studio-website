@@ -69,9 +69,6 @@ export default function Navbar() {
             whileTap={{ scale: 0.95 }}
           >
             <div className="flex items-center gap-3" style={{ direction: 'ltr' }}>
-              <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-primary rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
               <span className={`font-bold text-2xl transition-colors duration-300 ${
                 isScrolled 
                   ? 'text-navy' 
@@ -79,6 +76,9 @@ export default function Navbar() {
               }`}>
                 Tied Studio
               </span>
+              <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-primary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-lg">T</span>
+              </div>
             </div>
           </motion.div>
 
