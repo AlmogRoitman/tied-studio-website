@@ -42,13 +42,13 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="why-choose-us" className="py-36 bg-gradient-to-b from-secondary/30 to-background" ref={ref}>
+    <section id="why-choose-us" className="section-spacing bg-gradient-to-b from-secondary/30 to-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <motion.h2
             variants={fadeIn}
@@ -62,7 +62,7 @@ export default function WhyChooseUs() {
           />
           <motion.p
             variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
           >
             הייחודיות שלנו נובעת מהגישה האישית והמקצועיות הגבוהה שאנחנו מביאות לכל פרויקט
           </motion.p>
@@ -73,16 +73,16 @@ export default function WhyChooseUs() {
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-28"
+          className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-32"
         >
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
               variants={scaleIn}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-secondary/20 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-12 shadow-lg border border-secondary/20 hover:shadow-xl transition-all duration-300"
             >
-              <div className="text-5xl mb-6 text-center">{reason.icon}</div>
-              <h3 className="text-xl font-semibold text-navy mb-4 text-center">
+              <div className="text-5xl mb-10 text-center">{reason.icon}</div>
+              <h3 className="text-xl font-semibold text-navy mb-8 text-center">
                 {reason.title}
               </h3>
               <p className="text-foreground/80 leading-relaxed text-center">
@@ -100,10 +100,10 @@ export default function WhyChooseUs() {
             initial="initial"
             animate={isInView ? "animate" : "initial"}
           >
-            <h3 className="text-3xl font-bold text-navy mb-8">
+            <h3 className="text-3xl font-bold text-navy mb-16">
               מה מייחד אותנו
             </h3>
-            <div className="space-y-4">
+            <div className="space-y-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -115,7 +115,7 @@ export default function WhyChooseUs() {
                   <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
-                  <p className="text-lg text-foreground/80">{feature}</p>
+                  <p className="text-lg text-foreground/80 mb-2">{feature}</p>
                 </motion.div>
               ))}
             </div>
@@ -129,11 +129,11 @@ export default function WhyChooseUs() {
             className="space-y-8"
           >
             {/* Stats */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h4 className="text-2xl font-bold text-navy mb-6 text-center">
+            <div className="bg-white rounded-2xl p-12 shadow-lg mb-12">
+              <h4 className="text-2xl font-bold text-navy mb-12 text-center">
                 המספרים מדברים בעד עצמם
               </h4>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-8">
                 <div className="text-center">
                   <motion.div
                     className="text-4xl font-bold text-primary mb-2"
@@ -183,13 +183,13 @@ export default function WhyChooseUs() {
 
             {/* Testimonial */}
             <motion.div
-              className="bg-primary/10 rounded-2xl p-8 border-2 border-primary/20"
+              className="bg-primary/10 rounded-2xl p-10 border-2 border-primary/20"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 1.2 }}
             >
-              <div className="text-4xl text-primary mb-4 text-center">&ldquo;</div>
-              <p className="text-lg text-navy italic leading-relaxed text-center mb-4">
+              <div className="text-4xl text-primary mb-6 text-center">&ldquo;</div>
+              <p className="text-lg text-navy italic leading-relaxed text-center mb-6">
                 Tied Studio יצרו לנו מיתוג מושלם שהפך את החתונה שלנו לחוויה בלתי נשכחת. 
                 הקשב האישי והמקצועיות ללא פשרות.
               </p>

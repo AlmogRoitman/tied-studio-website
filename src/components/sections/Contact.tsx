@@ -48,13 +48,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-36 bg-gradient-to-b from-secondary/20 to-navy/5" ref={ref}>
+    <section id="contact" className="section-spacing bg-gradient-to-b from-secondary/20 to-navy/5" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <motion.h2
             variants={fadeIn}
@@ -68,39 +68,39 @@ export default function Contact() {
           />
           <motion.p
             variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
           >
             מוכנים להתחיל את המסע לחתונה המושלמת? בואו נתכנן ביחד את המיתוג החלומי שלכם
           </motion.p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-20 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div
             variants={fadeIn}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            className="bg-white rounded-2xl p-8 shadow-lg"
+            className="bg-white rounded-2xl p-10 shadow-lg"
           >
-            <h3 className="text-2xl font-bold text-navy mb-6 text-center">
+            <h3 className="text-2xl font-bold text-navy mb-12 text-center">
               שלחו לנו הודעה
             </h3>
 
             {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg text-green-700 text-center">
+              <div className="mb-8 p-4 bg-green-100 border border-green-300 rounded-lg text-green-700 text-center">
                 ההודעה נשלחה בהצלחה! נחזור אליכם בהקדם.
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-lg text-red-700 text-center">
+              <div className="mb-8 p-4 bg-red-100 border border-red-300 rounded-lg text-red-700 text-center">
                 אירעה שגיאה בשליחת ההודעה. אנא נסו שוב מאוחר יותר.
               </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
               <div>
-                <label className="block text-navy font-medium mb-2">שם מלא</label>
+                <label className="block text-navy font-medium mb-3">שם מלא</label>
                 <input
                   {...register('name')}
                   type="text"
@@ -108,12 +108,12 @@ export default function Contact() {
                   placeholder="שם הזוג"
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                  <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-navy font-medium mb-2">אימייל</label>
+                <label className="block text-navy font-medium mb-3">אימייל</label>
                 <input
                   {...register('email')}
                   type="email"
@@ -121,12 +121,12 @@ export default function Contact() {
                   placeholder="your.email@example.com"
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                  <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-navy font-medium mb-2">טלפון</label>
+                <label className="block text-navy font-medium mb-3">טלפון</label>
                 <input
                   {...register('phone')}
                   type="tel"
@@ -134,24 +134,24 @@ export default function Contact() {
                   placeholder="050-123-4567"
                 />
                 {errors.phone && (
-                  <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                  <p className="text-red-500 text-sm mt-2">{errors.phone.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-navy font-medium mb-2">תאריך החתונה</label>
+                <label className="block text-navy font-medium mb-3">תאריך החתונה</label>
                 <input
                   {...register('weddingDate')}
                   type="date"
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
                 />
                 {errors.weddingDate && (
-                  <p className="text-red-500 text-sm mt-1">{errors.weddingDate.message}</p>
+                  <p className="text-red-500 text-sm mt-2">{errors.weddingDate.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-navy font-medium mb-2">ספרו לנו על החתונה שלכם</label>
+                <label className="block text-navy font-medium mb-3">ספרו לנו על החתונה שלכם</label>
                 <textarea
                   {...register('message')}
                   rows={4}
@@ -159,7 +159,7 @@ export default function Contact() {
                   placeholder="מה החזון שלכם? איזה סטיל אתם אוהבים? יש לכם רעיונות מיוחדים?"
                 />
                 {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                  <p className="text-red-500 text-sm mt-2">{errors.message.message}</p>
                 )}
               </div>
 
@@ -186,12 +186,12 @@ export default function Contact() {
             animate={isInView ? "animate" : "initial"}
             className="space-y-8"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-navy mb-6 text-center">
+            <div className="bg-white rounded-2xl p-10 shadow-lg mb-8">
+              <h3 className="text-2xl font-bold text-navy mb-10 text-center">
                 בואו נתחבר
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                     <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,7 +233,7 @@ export default function Contact() {
             {/* WhatsApp Button */}
             <motion.button
               onClick={openWhatsApp}
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-2xl font-semibold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full bg-green-500 hover:bg-green-600 text-white py-5 px-6 rounded-2xl font-semibold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-300 mb-8"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -244,9 +244,9 @@ export default function Contact() {
             </motion.button>
 
             {/* Social Media */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-              <h3 className="text-xl font-bold text-navy mb-6">עקבו אחרינו</h3>
-              <div className="flex justify-center gap-4">
+            <div className="bg-white rounded-2xl p-10 shadow-lg text-center">
+              <h3 className="text-xl font-bold text-navy mb-8">עקבו אחרינו</h3>
+              <div className="flex justify-center gap-6">
                 <motion.a
                   href="https://instagram.com/tiedstudio"
                   target="_blank"

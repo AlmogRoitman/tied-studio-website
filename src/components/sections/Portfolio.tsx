@@ -62,13 +62,13 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-36 bg-gradient-to-b from-background to-secondary/20" ref={ref}>
+    <section id="portfolio" className="section-spacing bg-gradient-to-b from-background to-secondary/20" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
           <motion.h2
             variants={fadeIn}
@@ -82,7 +82,7 @@ export default function Portfolio() {
           />
           <motion.p
             variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto"
+            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
           >
             הציצו בתיק העבודות שלנו וראו כיצד אנחנו הופכות חזונות לעיצובים מושלמים
           </motion.p>
@@ -90,7 +90,7 @@ export default function Portfolio() {
 
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-4 mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
@@ -114,7 +114,7 @@ export default function Portfolio() {
 
         {/* Portfolio Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-16"
           layout
         >
           {filteredItems.map((item, index) => (
@@ -155,13 +155,13 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                <div className="p-10">
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
                       {item.category}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-navy mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-navy mb-6 group-hover:text-primary transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p className="text-foreground/70 leading-relaxed">
@@ -175,12 +175,12 @@ export default function Portfolio() {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-20"
+          className="text-center mt-24"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
         >
-          <p className="text-lg text-foreground/80 mb-6">
+          <p className="text-lg text-foreground/80 mb-8">
             רוצים לראות עוד עבודות? 📸
           </p>
           <motion.a

@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden hero-spacing">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-primary/20" />
@@ -34,14 +34,14 @@ export default function Hero() {
         variants={staggerContainer}
         initial="initial"
         animate="animate"
-        className="container mx-auto px-6 relative z-10 text-center"
+        className="container mx-auto px-6 relative z-10 text-center space-y-8"
       >
         {/* Company Name */}
         <motion.div
           variants={textReveal}
-          className="mb-8"
+          className="mb-12"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-navy mb-4 font-serif">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-navy mb-6 font-serif">
             <span className="bg-gradient-to-l from-primary via-accent to-primary bg-clip-text text-transparent">
               Tied Studio
             </span>
@@ -49,14 +49,14 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Headline */}
-        <motion.div variants={fadeIn} className="mb-8">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-4">
+        <motion.div variants={fadeIn} className="mb-12">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
             מיתוג חתונות מקצה לקצה
           </h2>
         </motion.div>
 
         {/* Subheading */}
-        <motion.div variants={fadeIn} className="mb-16">
+        <motion.div variants={fadeIn} className="mb-20">
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
             עיצוב אישי ויוקרתי לחתונה המושלמת שלכם
           </p>

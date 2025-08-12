@@ -10,7 +10,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="py-36 bg-gradient-to-b from-background to-secondary/30" ref={ref}>
+    <section id="about" className="section-spacing bg-gradient-to-b from-background to-secondary/30" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -30,7 +30,7 @@ export default function About() {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
           {/* Left Content */}
           <motion.div
             variants={slideInLeft}
@@ -38,8 +38,8 @@ export default function About() {
             animate={isInView ? "animate" : "initial"}
             className="space-y-8"
           >
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-navy mb-4">
+            <div className="mb-12">
+              <h3 className="text-2xl md:text-3xl font-bold text-navy mb-6">
                 מה אנחנו מציעות
               </h3>
               <p className="text-lg text-foreground/80 leading-relaxed">
@@ -48,8 +48,8 @@ export default function About() {
               </p>
             </div>
 
-            <div>
-              <h4 className="text-xl font-semibold text-navy mb-3">
+            <div className="mb-12">
+              <h4 className="text-xl font-semibold text-navy mb-4">
                 הגישה האישית שלנו
               </h4>
               <p className="text-lg text-foreground/80 leading-relaxed">
@@ -67,30 +67,30 @@ export default function About() {
             animate={isInView ? "animate" : "initial"}
             className="space-y-8"
           >
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h4 className="text-xl font-semibold text-navy mb-4">
+            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
+              <h4 className="text-xl font-semibold text-navy mb-6">
                 הייחודיות שלנו
               </h4>
-              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+              <p className="text-lg text-foreground/80 leading-relaxed mb-8">
                 לפני שאנחנו מתחילות בתהליך העיצוב, אנחנו יושבות עם הזוג להכיר את החזון שלהם, 
                 את הסטיל שהם אוהבים ואת האווירה שהם רוצים ליצור.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-6">
                 <motion.div
-                  className="text-center p-4 bg-primary/10 rounded-lg"
+                  className="text-center p-6 bg-primary/10 rounded-lg"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl font-bold text-primary mb-2">100+</div>
+                  <div className="text-2xl font-bold text-primary mb-3">100+</div>
                   <div className="text-sm text-navy">חתונות מוצלחות</div>
                 </motion.div>
                 <motion.div
-                  className="text-center p-4 bg-accent/10 rounded-lg"
+                  className="text-center p-6 bg-accent/10 rounded-lg"
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="text-2xl font-bold text-accent mb-2">5+</div>
+                  <div className="text-2xl font-bold text-accent mb-3">5+</div>
                   <div className="text-sm text-navy">שנות ניסיון</div>
                 </motion.div>
               </div>
