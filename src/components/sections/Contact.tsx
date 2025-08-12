@@ -80,8 +80,9 @@ export default function Contact() {
             variants={fadeIn}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            className="bg-white rounded-3xl p-16 shadow-2xl border border-secondary/20 backdrop-blur-sm"
+            className="bg-white rounded-3xl shadow-2xl border border-secondary/20 backdrop-blur-sm"
           >
+            <div style={{ padding: '3rem' }}>
             <div className="text-center mb-12">
               <h3 className="text-3xl font-bold text-navy mb-4">
                 שלחו לנו הודעה
@@ -104,7 +105,7 @@ export default function Contact() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
               <div className="relative">
                 <label className="block text-navy font-semibold mb-4 text-lg flex items-center gap-2">
                   <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20">
@@ -249,6 +250,7 @@ export default function Contact() {
                 )}
               </motion.button>
             </form>
+            </div>
           </motion.div>
 
           {/* Contact Information */}
