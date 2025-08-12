@@ -86,13 +86,13 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="services" className="py-28 bg-background" ref={ref}>
+    <section id="services" className="py-36 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={fadeIn}
@@ -149,12 +149,12 @@ export default function Services() {
 
         {/* Process Timeline */}
         <motion.div
-          className="mt-20 max-w-4xl mx-auto"
+          className="mt-28 max-w-4xl mx-auto"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8 }}
         >
-          <h3 className="text-3xl font-bold text-navy text-center mb-12">
+          <h3 className="text-3xl font-bold text-navy text-center mb-16">
             תהליך העבודה שלנו
           </h3>
           

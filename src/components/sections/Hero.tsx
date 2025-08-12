@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-primary/20" />
@@ -49,14 +49,14 @@ export default function Hero() {
         </motion.div>
 
         {/* Main Headline */}
-        <motion.div variants={fadeIn} className="mb-6">
+        <motion.div variants={fadeIn} className="mb-8">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-4">
             מיתוג חתונות מקצה לקצה
           </h2>
         </motion.div>
 
         {/* Subheading */}
-        <motion.div variants={fadeIn} className="mb-12">
+        <motion.div variants={fadeIn} className="mb-16">
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
             עיצוב אישי ויוקרתי לחתונה המושלמת שלכם
           </p>

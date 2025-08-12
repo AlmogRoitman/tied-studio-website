@@ -62,13 +62,13 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-28 bg-gradient-to-b from-background to-secondary/20" ref={ref}>
+    <section id="portfolio" className="py-36 bg-gradient-to-b from-background to-secondary/20" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={fadeIn}
@@ -90,7 +90,7 @@ export default function Portfolio() {
 
         {/* Category Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.3 }}
@@ -175,7 +175,7 @@ export default function Portfolio() {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-20"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}

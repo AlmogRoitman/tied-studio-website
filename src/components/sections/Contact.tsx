@@ -48,13 +48,13 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 bg-gradient-to-b from-secondary/20 to-navy/5" ref={ref}>
+    <section id="contact" className="py-36 bg-gradient-to-b from-secondary/20 to-navy/5" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={fadeIn}

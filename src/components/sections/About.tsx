@@ -10,13 +10,13 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="py-28 bg-gradient-to-b from-background to-secondary/30" ref={ref}>
+    <section id="about" className="py-36 bg-gradient-to-b from-background to-secondary/30" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={fadeIn}

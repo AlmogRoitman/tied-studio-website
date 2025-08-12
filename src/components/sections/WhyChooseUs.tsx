@@ -42,13 +42,13 @@ export default function WhyChooseUs() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="why-choose-us" className="py-28 bg-gradient-to-b from-secondary/30 to-background" ref={ref}>
+    <section id="why-choose-us" className="py-36 bg-gradient-to-b from-secondary/30 to-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <motion.h2
             variants={fadeIn}
@@ -73,7 +73,7 @@ export default function WhyChooseUs() {
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-24"
+          className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto mb-28"
         >
           {reasons.map((reason, index) => (
             <motion.div
