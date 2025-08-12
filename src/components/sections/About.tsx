@@ -10,7 +10,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-secondary/30" ref={ref}>
+    <section id="about" className="py-28 bg-gradient-to-b from-background to-secondary/30" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -30,7 +30,7 @@ export default function About() {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Left Content */}
           <motion.div
             variants={slideInLeft}

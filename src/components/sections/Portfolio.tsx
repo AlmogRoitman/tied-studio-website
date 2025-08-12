@@ -62,7 +62,7 @@ export default function Portfolio() {
     : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-b from-background to-secondary/20" ref={ref}>
+    <section id="portfolio" className="py-28 bg-gradient-to-b from-background to-secondary/20" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -114,7 +114,7 @@ export default function Portfolio() {
 
         {/* Portfolio Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto"
           layout
         >
           {filteredItems.map((item, index) => (

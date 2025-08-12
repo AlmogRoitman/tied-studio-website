@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Navbar from "@/components/ui/Navbar";
 
 export const metadata: Metadata = {
   title: "Tied Studio - מיתוג חתונות מקצה לקצה",
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl">
       <body className="font-sans antialiased">
+        <Navbar />
         {children}
       </body>
     </html>

@@ -9,42 +9,42 @@ const services = [
   {
     title: "פגישת היכרות והגדרת קונספט",
     description: "ישיבה אישית להבנת החזון שלכם ויצירת קונספט עיצובי מותאם",
-    icon: "👥",
+    icon: "●",
   },
   {
     title: "לווי צמוד ותיאום עם בתי דפוס",
     description: "ניהול מלא של תהליך הדפוס ואספקה עם ספקים מובחרים",
-    icon: "🤝",
+    icon: "◆",
   },
   {
     title: "הפקה מקצה לקצה",
     description: "מעיצוב ראשוני ועד למוצר מוגמר - אנחנו מטפלות בכל השלבים",
-    icon: "⚡",
+    icon: "▲",
   },
   {
     title: "מיתוג משולב דיגיטלי ופיזי",
     description: "שילוב מושלם בין עיצוב דיגיטלי למוצרים פיזיים",
-    icon: "🎨",
+    icon: "■",
   },
   {
     title: "עיצוב מותאם אישית",
     description: "פונטים, צבעים ונייר נבחרים במיוחד עבור החתונה שלכם",
-    icon: "✨",
+    icon: "★",
   },
   {
     title: "צילומי סייב דה דייט ממותגים",
     description: "צילומים מקצועיים הכוללים את המיתוג שלכם",
-    icon: "📸",
+    icon: "♦",
   },
   {
     title: "מוצרי רווקות ממותגים",
     description: "חפצים ומזכרות מיוחדים למסיבת הרווקות",
-    icon: "🎉",
+    icon: "◉",
   },
   {
     title: "תיאום מקצועי",
     description: "ליווי והכוונה לאורך כל שלבי התכנון וההפקה",
-    icon: "📋",
+    icon: "♠",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="services" className="py-20 bg-background" ref={ref}>
+    <section id="services" className="py-28 bg-background" ref={ref}>
       <div className="container mx-auto px-6">
         <motion.div
           variants={staggerContainer}
@@ -83,7 +83,7 @@ export default function Services() {
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -96,7 +96,7 @@ export default function Services() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="text-4xl mb-4 text-center">{service.icon}</div>
+                <div className="text-6xl mb-6 text-center text-primary">{service.icon}</div>
                 <h3 className="text-lg font-semibold text-navy mb-3 text-center min-h-[3rem] flex items-center justify-center">
                   {service.title}
                 </h3>
