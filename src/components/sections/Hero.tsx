@@ -101,9 +101,9 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Desktop (Mouse) */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
         animate={{
           y: [0, 10, 0],
         }}
@@ -125,6 +125,30 @@ export default function Hero() {
               ease: "easeInOut",
             }}
           />
+        </div>
+      </motion.div>
+
+      {/* Scroll Indicator - Mobile (Hand Swipe) */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 md:hidden"
+      >
+        <div className="flex flex-col items-center">
+          {/* Upward arrow */}
+          <motion.div
+            className="relative"
+            animate={{
+              y: [10, -8, 10],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <svg className="w-6 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+            </svg>
+          </motion.div>
         </div>
       </motion.div>
     </section>
