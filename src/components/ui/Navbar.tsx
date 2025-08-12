@@ -59,7 +59,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between lg:justify-start h-20">
           {/* Logo */}
           <motion.div
             className="cursor-pointer"
@@ -81,8 +81,8 @@ export default function Navbar() {
             </div>
           </motion.div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex items-center justify-center flex-1">
             <div className={`flex items-center gap-2 p-2 rounded-2xl transition-all duration-300 ${
               isScrolled 
                 ? 'bg-secondary/30 shadow-inner border border-primary/10' 
@@ -114,6 +114,9 @@ export default function Navbar() {
               })}
             </div>
           </div>
+
+          {/* Desktop Right Side - Empty for balance */}
+          <div className="hidden lg:block w-[180px]"></div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
