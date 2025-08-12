@@ -49,11 +49,12 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-white/98 backdrop-blur-xl shadow-xl border-b border-primary/20'
           : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent backdrop-blur-sm'
       }`}
+      style={{ direction: 'ltr' }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -62,12 +63,12 @@ export default function Navbar() {
         <div className="flex items-center justify-between lg:justify-start h-20">
           {/* Logo */}
           <motion.div
-            className="cursor-pointer"
+            className="cursor-pointer logo"
             onClick={() => scrollToSection('#hero')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" style={{ direction: 'ltr' }}>
               <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-primary rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">T</span>
               </div>
