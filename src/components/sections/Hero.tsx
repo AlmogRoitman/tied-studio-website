@@ -62,17 +62,6 @@ export default function Hero() {
           </p>
         </motion.div>
 
-        {/* CTA Button */}
-        <motion.div variants={fadeIn}>
-          <motion.button
-            onClick={scrollToContact}
-            className="bg-primary hover:bg-primary/90 text-white px-12 py-4 rounded-full text-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-primary hover:border-primary/90"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            בואו ליצור ביחד
-          </motion.button>
-        </motion.div>
 
         {/* Decorative Elements */}
         <motion.div

@@ -5,10 +5,10 @@ import { useState, useEffect } from 'react';
 
 const navigationItems = [
   { name: 'בית', href: '#hero' },
-  { name: 'אודות', href: '#about' },
+  { name: 'מי אנחנו', href: '#about' },
   { name: 'מה אנחנו עושות', href: '#services' },
   { name: 'עבודות', href: '#portfolio' },
-  { name: 'צור קשר', href: '#contact' },
+  { name: 'צרו קשר', href: '#contact' },
 ];
 
 export default function Navbar() {
