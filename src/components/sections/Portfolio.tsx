@@ -8,58 +8,60 @@ import { fadeIn, staggerContainer } from '@/lib/animations';
 const portfolioItems = [
   {
     id: 1,
-    title: "חתונת חלומות - שרה ודוד",
+    title: "חתונת חלומות - דנה ואלמוג",
     category: "מיתוג מלא",
-    description: "מיתוג מושלם בגוני ורוד עתיק וזהב, כולל הזמנות, תפריטים וקישוטים",
-    image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 2,
-    title: "אלגנטיות קלאסית - מיכל ויוסי",
-    category: "הזמנות וסטישנרי",
-    description: "עיצוב קלאסי ואלגנטי בגוני קרם ונחושת עם טיפוגרפיה מיוחדת",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 3,
-    title: "בוהמיינית מודרנית - רות ואלון",
-    category: "מיתוג דיגיטלי",
-    description: "מיתוג בוהמייני עם מגע מודרני, כולל אתר חתונה ותוכן לרשתות חברתיות",
-    image: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=600&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 4,
-    title: "יוקרה מינימלית - דנה ותומר",
-    category: "מיתוג מלא",
-    description: "עיצוב מינימליסטי ויוקרתי עם דגש על טיפוגרפיה נקייה וחומרים איכותיים",
-    image: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 5,
-    title: "רומנטיקה וינטג' - ליה ונועם",
-    category: "סייב דה דייט",
-    description: "צילומי סייב דה דייט עם מיתוג וינטג' רומנטי ואביזרים מותאמים",
-    image: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=400&fit=crop&crop=center",
-  },
-  {
-    id: 6,
-    title: "חתונה בטבע - איה ועידן",
-    category: "מיתוג אורגני",
-    description: "מיתוג טבעי ואורגני עם מוטיבים בוטניים וחומרים ידידותיים לסביבה",
-    image: "https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=600&h=400&fit=crop&crop=center",
+    description: "מיתוג מושלם וייחודי שמשקף את האישיות והסטיל של הזוג, כולל הזמנות, תפריטים וקישוטים מותאמים אישית",
+    folder: "dana-almog",
+    mainImage: "DSC05379.jpg",
+    allImages: [
+      "DSC05379.jpg", "DSC05852.jpg", "DSC05900.jpg", "DSCF9633.jpg", 
+      "DSCF9687.jpg", "DSCF9706.jpg", "DSCF9737.jpg", "DSCF9738.jpg",
+      "DSCF9746.jpg", "DSCF9756.jpg", "SB201266.jpg", "SB201273.jpg",
+      "SB201344.jpg", "SB201518.jpg", "SB201758.jpg"
+    ],
   },
 ];
 
-const categories = ["הכל", "מיתוג מלא", "הזמנות וסטישנרי", "מיתוג דיגיטלי", "סייב דה דייט", "מיתוג אורגני"];
+const categories = ["הכל", "מיתוג מלא"];
 
 export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeCategory, setActiveCategory] = useState("הכל");
+  const [selectedProject, setSelectedProject] = useState<typeof portfolioItems[0] | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredItems = activeCategory === "הכל" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory);
+
+  const openProject = (project: typeof portfolioItems[0]) => {
+    if (project.allImages && project.allImages.length > 0) {
+      setSelectedProject(project);
+      setCurrentImageIndex(0);
+    }
+  };
+
+  const closeProject = () => {
+    setSelectedProject(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedProject && selectedProject.allImages) {
+      setCurrentImageIndex((prev) => 
+        prev === selectedProject.allImages!.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProject && selectedProject.allImages) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? selectedProject.allImages!.length - 1 : prev - 1
+      );
+    }
+  };
 
   return (
     <section id="portfolio" className="section-spacing bg-gradient-to-b from-background to-secondary/20" ref={ref}>
@@ -126,12 +128,16 @@ export default function Portfolio() {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group cursor-pointer"
+              onClick={() => openProject(item)}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg bg-white">
                 {/* Image Container */}
                 <div className="relative h-64 overflow-hidden">
                   <motion.img
-                    src={item.image}
+                    src={item.folder && item.mainImage 
+                      ? `/images/portfolio/${item.folder}/${item.mainImage}`
+                      : item.image
+                    }
                     alt={item.title}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
@@ -198,6 +204,105 @@ export default function Portfolio() {
           </motion.a>
         </motion.div>
       </div>
+
+      {/* Image Gallery Modal */}
+      {selectedProject && (
+        <motion.div
+          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={closeProject}
+        >
+          <div className="relative max-w-6xl w-full max-h-full" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button */}
+            <motion.button
+              className="absolute top-4 right-4 z-10 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+              onClick={closeProject}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </motion.button>
+
+            {/* Project Title */}
+            <div className="absolute top-4 left-4 z-10 bg-white/20 backdrop-blur-sm rounded-lg px-4 py-2 text-white">
+              <h3 className="text-lg font-semibold">{selectedProject.title}</h3>
+              <p className="text-sm opacity-80">
+                {currentImageIndex + 1} / {selectedProject.allImages?.length}
+              </p>
+            </div>
+
+            {/* Main Image */}
+            <motion.div
+              className="relative w-full h-[80vh] flex items-center justify-center"
+              key={currentImageIndex}
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={`/images/portfolio/${selectedProject.folder}/${selectedProject.allImages?.[currentImageIndex]}`}
+                alt={`${selectedProject.title} - תמונה ${currentImageIndex + 1}`}
+                className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+
+            {/* Navigation Arrows */}
+            {selectedProject.allImages && selectedProject.allImages.length > 1 && (
+              <>
+                <motion.button
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  onClick={prevImage}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </motion.button>
+
+                <motion.button
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  onClick={nextImage}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </motion.button>
+              </>
+            )}
+
+            {/* Thumbnail Strip */}
+            {selectedProject.allImages && selectedProject.allImages.length > 1 && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-2 max-w-full overflow-x-auto">
+                {selectedProject.allImages.map((image, index) => (
+                  <motion.button
+                    key={image}
+                    className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                      index === currentImageIndex 
+                        ? 'border-primary scale-110' 
+                        : 'border-white/20 hover:border-white/40'
+                    }`}
+                    onClick={() => setCurrentImageIndex(index)}
+                    whileHover={{ scale: index === currentImageIndex ? 1.1 : 1.05 }}
+                  >
+                    <img
+                      src={`/images/portfolio/${selectedProject.folder}/${image}`}
+                      alt={`תמונה ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </motion.button>
+                ))}
+              </div>
+            )}
+          </div>
+        </motion.div>
+      )}
     </section>
   );
 }
