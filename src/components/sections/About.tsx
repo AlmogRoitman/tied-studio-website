@@ -59,64 +59,6 @@ export default function About() {
               </p>
             </div>
           </motion.div>
-
-          {/* Right Content */}
-          <motion.div
-            variants={slideInRight}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            className="space-y-8"
-          >
-            <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
-              <h4 className="text-xl font-semibold text-navy mb-6">
-                הייחודיות שלנו
-              </h4>
-              <p className="text-lg text-foreground/80 leading-relaxed mb-8">
-                לפני שאנחנו מתחילות בתהליך העיצוב, אנחנו יושבות עם הזוג להכיר את החזון שלהם, 
-                את הסטיל שהם אוהבים ואת האווירה שהם רוצים ליצור.
-              </p>
-
-              <div className="grid grid-cols-2 gap-6">
-                <motion.div
-                  className="text-center p-6 bg-primary/10 rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-2xl font-bold text-primary mb-3">100+</div>
-                  <div className="text-sm text-navy">חתונות מוצלחות</div>
-                </motion.div>
-                <motion.div
-                  className="text-center p-6 bg-accent/10 rounded-lg"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="text-2xl font-bold text-accent mb-3">5+</div>
-                  <div className="text-sm text-navy">שנות ניסיון</div>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Values */}
-            <div className="space-y-4">
-              {[
-                "עיצוב מותאם אישית לכל זוג",
-                "לווי צמוד לאורך כל התהליך",
-                "תיאום עם ספקים ובתי דפוס",
-                "איכות פרימיום בכל פרט"
-              ].map((value, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center space-x-3 space-x-reverse"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: index * 0.1 + 0.5 }}
-                >
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                  <p className="text-foreground/80">{value}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

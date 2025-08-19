@@ -98,7 +98,7 @@ export default function Services() {
             variants={fadeIn}
             className="text-4xl md:text-5xl font-bold text-navy mb-6 font-serif"
           >
-            השירותים שלנו
+            מה אנחנו עושות
           </motion.h2>
           <motion.div
             variants={fadeIn}

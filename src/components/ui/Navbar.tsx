@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const navigationItems = [
   { name: 'בית', href: '#hero' },
   { name: 'אודות', href: '#about' },
-  { name: 'שירותים', href: '#services' },
+  { name: 'מה אנחנו עושות', href: '#services' },
   { name: 'עבודות', href: '#portfolio' },
   { name: 'צור קשר', href: '#contact' },
 ];
@@ -199,10 +199,6 @@ function MobileMenu({
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         <div className="p-6">
-          <div className="text-center mb-6">
-            <h3 className="text-lg font-bold text-navy mb-2">תפריט ניווט</h3>
-            <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
-          </div>
           
           <div className="grid gap-2">
             {items.map((item, index) => {
