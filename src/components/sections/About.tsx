@@ -30,7 +30,7 @@ export default function About() {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16 items-start max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Left Content */}
           <motion.div
             variants={slideInLeft}
@@ -58,6 +58,39 @@ export default function About() {
                 אנחנו כאן לכל השלבים.
               </p>
             </div>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            variants={slideInRight}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            className="relative"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <motion.img
+                src="/images/portfolio/DSC04050.jpg"
+                alt="עבודה של Tied Studio - מיתוג חתונות"
+                className="w-full h-auto object-cover"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
+            </div>
+            
+            {/* Decorative element */}
+            <motion.div
+              className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full -z-10"
+              animate={{
+                scale: [1, 1.1, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
           </motion.div>
         </div>
       </div>
