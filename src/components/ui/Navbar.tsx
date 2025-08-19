@@ -7,7 +7,6 @@ const navigationItems = [
   { name: 'בית', href: '#hero' },
   { name: 'אודות', href: '#about' },
   { name: 'שירותים', href: '#services' },
-  { name: 'למה אנחנו', href: '#why-choose-us' },
   { name: 'עבודות', href: '#portfolio' },
   { name: 'צור קשר', href: '#contact' },
 ];
