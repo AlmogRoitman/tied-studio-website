@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --background: #fefefe;
-  --foreground: #2c2c2c;
-  --primary: #c4968e;
-  --secondary: #f4e5d3;
-  --accent: #d4af37;
-  --navy: #2c3e50;
+  --background: #F5F0E8;
+  --foreground: #111111;
+  --primary: #E63946;
+  --secondary: #F5F0E8;
+  --accent: #E63946;
+  --navy: #111111;
 }
 
 @theme inline {
