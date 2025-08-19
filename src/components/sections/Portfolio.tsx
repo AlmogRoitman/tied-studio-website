@@ -5,7 +5,18 @@ import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { fadeIn, staggerContainer } from '@/lib/animations';
 
-const portfolioItems = [
+interface PortfolioItem {
+  id: number;
+  title: string;
+  category: string;
+  description: string;
+  folder?: string;
+  mainImage?: string;
+  allImages?: string[];
+  image?: string;
+}
+
+const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     title: "חתונת חלומות - דנה ואלמוג",
@@ -28,14 +39,14 @@ export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeCategory, setActiveCategory] = useState("הכל");
-  const [selectedProject, setSelectedProject] = useState<typeof portfolioItems[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredItems = activeCategory === "הכל" 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory);
 
-  const openProject = (project: typeof portfolioItems[0]) => {
+  const openProject = (project: PortfolioItem) => {
     if (project.allImages && project.allImages.length > 0) {
       setSelectedProject(project);
       setCurrentImageIndex(0);
@@ -136,7 +147,7 @@ export default function Portfolio() {
                   <motion.img
                     src={item.folder && item.mainImage 
                       ? `/images/portfolio/${item.folder}/${item.mainImage}`
-                      : item.image
+                      : item.image || ''
                     }
                     alt={item.title}
                     className="w-full h-full object-cover"
