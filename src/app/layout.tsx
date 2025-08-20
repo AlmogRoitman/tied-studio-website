@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Tied Studio" }],
   creator: "Tied Studio",
   publisher: "Tied Studio",
+  icons: {
+    icon: '/icon.svg',
+  },
   formatDetection: {
     email: false,
     address: false,
