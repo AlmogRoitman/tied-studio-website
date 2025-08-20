@@ -41,12 +41,21 @@ export default function Hero() {
           variants={textReveal}
           className="mb-12"
         >
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-12">
             <img 
               src="/images/portfolio/Logo_text.svg" 
               alt="Tied Studio" 
               className="h-24 md:h-32 lg:h-40 w-auto object-contain"
             />
+          </div>
+          <div className="flex justify-center" style={{ marginTop: '140px' }}>
+            <motion.h2
+              variants={fadeIn}
+              className="text-xl md:text-2xl lg:text-3xl font-semibold text-navy/90 max-w-4xl leading-relaxed text-center"
+              style={{ textAlign: 'center' }}
+            >
+              סטודיו לעיצוב ומיתוג לאירועים: חתונות ורווקות. שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם.
+            </motion.h2>
           </div>
         </motion.div>
 

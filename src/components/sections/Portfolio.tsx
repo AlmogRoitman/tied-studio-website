@@ -19,9 +19,9 @@ interface PortfolioItem {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "חתונת חלומות - דנה ואלמוג",
-    category: "מיתוג מלא",
-    description: "מיתוג מושלם וייחודי שמשקף את האישיות והסטיל של הזוג, כולל הזמנות, תפריטים וקישוטים מותאמים אישית",
+    title: "חתונות",
+    category: "חתונות",
+    description: "מיתוג מלא לחתונה בסגנון רומנטי עם פרטים מוזהבים",
     folder: "dana-almog",
     mainImage: "DSC05379.jpg",
     allImages: [
@@ -31,20 +31,26 @@ const portfolioItems: PortfolioItem[] = [
       "SB201344.jpg", "SB201518.jpg", "SB201758.jpg"
     ],
   },
+  {
+    id: 2,
+    title: "מסיבות רווקות",
+    category: "מסיבות רווקות",
+    description: "עיצוב ומיתוג למסיבות רווקות מיוחדות",
+    folder: "dana-almog", // Using same folder for now, you can change this later
+    mainImage: "DSC05379.jpg", // You can specify different image
+    allImages: [
+      "DSC05379.jpg", "DSC05852.jpg", "DSC05900.jpg", "DSCF9633.jpg", "DSCF9687.jpg"
+    ],
+  },
 ];
-
-const categories = ["הכל", "מיתוג מלא"];
 
 export default function Portfolio() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const [activeCategory, setActiveCategory] = useState("הכל");
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const filteredItems = activeCategory === "הכל" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems = portfolioItems;
 
   const openProject = (project: PortfolioItem) => {
     if (project.allImages && project.allImages.length > 0) {
@@ -87,7 +93,7 @@ export default function Portfolio() {
             variants={fadeIn}
             className="text-4xl md:text-5xl font-bold text-navy mb-6 font-serif"
           >
-            עבודות שלנו
+            תיק עבודות
           </motion.h2>
           <motion.div
             variants={fadeIn}
@@ -95,35 +101,12 @@ export default function Portfolio() {
           />
           <motion.p
             variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
+            className="text-xl text-foreground/80 mx-auto mb-8"
           >
-            הציצו בתיק העבודות שלנו וראו כיצד אנחנו הופכות חזונות לעיצובים מושלמים
+            כל אירוע הוא סיפור אחר - בכל פרויקט אנחנו יוצרות שפה אחידה, ובתוכה ייחודיות לזוג או לכלה.
           </motion.p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.3 }}
-        >
-          {categories.map((category) => (
-            <motion.button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-primary text-white shadow-lg"
-                  : "bg-white text-navy hover:bg-primary/10 border border-primary/20"
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </motion.div>
 
         {/* Portfolio Grid */}
         <motion.div
@@ -172,18 +155,10 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="p-10">
-                  <div className="flex justify-between items-start mb-6">
-                    <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
-                      {item.category}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-navy mb-6 group-hover:text-primary transition-colors duration-300">
+                <div style={{ padding: '24px 32px' }}>
+                  <h3 className="text-xl font-semibold text-navy group-hover:text-primary transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    {item.description}
-                  </p>
                 </div>
               </div>
             </motion.div>

@@ -7,75 +7,33 @@ import { fadeIn, staggerContainer } from '@/lib/animations';
 
 const services = [
   {
-    title: "פגישת היכרות והגדרת קונספט",
-    description: "ישיבה אישית להבנת החזון שלכם ויצירת קונספט עיצובי מותאם",
+    title: "מיתוג חתונה",
+    bulletPoints: [
+      "קונספט ושפה: צבעים, טיפוגרפיה, אלמנטים גרפיים וגריד.",
+      "הזמנות: Save the Date, הזמנה - דיגיטלית/מודפסת.",
+      "יום האירוע: לוח הושבה, מספרי שולחן, תפריטים, כרטיסי שם, שילוט.",
+      "מסיבה: פרופס שייחודיים רק לכם.",
+      "דיגיטל: עמוד/אתר חתונה.",
+      "הפקה: קבצים לדפוס, בדיקות חומרים."
+    ],
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
       </svg>
     ),
   },
   {
-    title: "לווי צמוד ותיאום עם בתי דפוס",
-    description: "ניהול מלא של תהליך הדפוס ואספקה עם ספקים מובחרים",
+    title: "מיתוג מסיבת רווקות",
+    bulletPoints: [
+      "קונספט בהתאמה לכלה והחבורה.",
+      "עיצוב חבילה ממותגת: הזמנה, מדבקות.",
+      "קיטים אישיים: תגי שם, גלויות, אריזות מתנה, מדבקות לבקבוקים/כוסות.",
+      "דיגיטל: סטוריז, רקעים.",
+      "הפקה: קבצים לדפוס/בית דפוס, התאמות חומרים."
+    ],
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-      </svg>
-    ),
-  },
-  {
-    title: "הפקה מקצה לקצה",
-    description: "מעיצוב ראשוני ועד למוצר מוגמר - אנחנו מטפלות בכל השלבים",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
-  },
-  {
-    title: "מיתוג משולב דיגיטלי ופיזי",
-    description: "שילוב מושלם בין עיצוב דיגיטלי למוצרים פיזיים",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    title: "עיצוב מותאם אישית",
-    description: "פונטים, צבעים ונייר נבחרים במיוחד עבור החתונה שלכם",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4 4 4 0 004-4V5z" />
-      </svg>
-    ),
-  },
-  {
-    title: "צילומי סייב דה דייט ממותגים",
-    description: "צילומים מקצועיים הכוללים את המיתוג שלכם",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "מוצרי רווקות ממותגים",
-    description: "חפצים ומזכרות מיוחדים למסיבת הרווקות",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 0v1.5m0 0V9a2 2 0 012 0v8a2 2 0 01-2 2m-6 0V9a2 2 0 012-2V6a2 2 0 112 0v2.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "תיאום מקצועי",
-    description: "ליווי והכוונה לאורך כל שלבי התכנון וההפקה",
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+      <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.091 3.091zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
       </svg>
     ),
   },
@@ -102,21 +60,15 @@ export default function Services() {
           </motion.h2>
           <motion.div
             variants={fadeIn}
-            className="w-24 h-1 bg-primary mx-auto mb-6"
+            className="w-24 h-1 bg-primary mx-auto mb-16"
           />
-          <motion.p
-            variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
-          >
-            אנחנו מציעות חבילת שירותים מקצועית וכוללת למיתוג החתונה שלכם
-          </motion.p>
         </motion.div>
 
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 max-w-7xl mx-auto mb-16"
+          className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16"
         >
           {services.map((service, index) => (
             <motion.div
@@ -125,17 +77,24 @@ export default function Services() {
               className="group"
             >
               <motion.div
-                className="bg-white rounded-2xl p-8 shadow-lg h-full border border-secondary/20 cursor-pointer"
-                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white rounded-3xl shadow-lg h-full border border-secondary/10 hover:border-primary/20 transition-all duration-300"
+                style={{ padding: '32px' }}
+                whileHover={{ y: -5, scale: 1.01 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="mb-10 text-center text-primary flex justify-center">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-navy mb-8 text-center min-h-[3rem] flex items-center justify-center">
-                  {service.title}
-                </h3>
-                <p className="text-foreground/70 text-center leading-relaxed mb-8">
-                  {service.description}
-                </p>
+                <div className="mb-8 text-center">
+                  <h3 className="text-2xl font-bold text-navy">
+                    {service.title}
+                  </h3>
+                </div>
+                <div className="space-y-3 text-right" style={{ padding: '0 16px' }}>
+                  {service.bulletPoints?.map((point, i) => (
+                    <div key={i} className="flex items-start gap-3" style={{ paddingBottom: '6px' }}>
+                      <span className="text-primary mt-1 flex-shrink-0 text-lg">•</span>
+                      <span className="text-foreground/80 leading-relaxed text-base">{point}</span>
+                    </div>
+                  ))}
+                </div>
               </motion.div>
             </motion.div>
           ))}
@@ -149,15 +108,16 @@ export default function Services() {
           transition={{ delay: 0.8 }}
         >
           <h3 className="text-3xl font-bold text-navy text-center mb-20">
-            תהליך העבודה שלנו
+            תהליך עבודה
           </h3>
           
           <div className="space-y-12">
             {[
-              { step: "01", title: "פגישת היכרות", desc: "הכנות זוג והגדרת חזון" },
-              { step: "02", title: "יצירת קונספט", desc: "פיתוח רעיונות ועיצוב ראשוני" },
-              { step: "03", title: "עיצוב מפורט", desc: "יצירת כל החומרים הגרפיים" },
-              { step: "04", title: "הדפסה ואספקה", desc: "ייצור והספקת המוצרים" }
+              { step: "01", title: "היכרות קצרה", desc: "לומדות להכיר אתכם ואת האווירה שאתם רוצים לייצר." },
+              { step: "02", title: "בניית קונספט", desc: "מגדירות יחד צבעים, פונטים והשראות שיתחברו לסיפור שלכם." },
+              { step: "03", title: "עיצוב כל מה שצריך", desc: "מההזמנה ועד השלטים, מהתפריטים ועד פריטים קטנים למסיבה – הכול באותו קו אחיד." },
+              { step: "04", title: "הפקה והדפסה", desc: "דואגות שהכול יוצא מדויק, בזמן ובקו אחיד." },
+              { step: "05", title: "מסירה מסודרת", desc: "מקבלים חבילה נקייה ומוכנה, כך שהאירוע כולו נראה שלם וייחודי." }
             ].map((item, index) => (
               <motion.div
                 key={index}
