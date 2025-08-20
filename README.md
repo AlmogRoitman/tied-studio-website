@@ -174,7 +174,7 @@ This project includes:
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proprietary software developed for Tied Studio.
 
 ## 🤝 Contributing
 
@@ -186,10 +186,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support or questions about this project:
-
-- 📱 WhatsApp: [Click to message](https://wa.me/972528014889)
-- 📸 Instagram: [@studio_tied](https://instagram.com/studio_tied)
+For support or questions about this project, please contact the development team.
 
 ---
 
