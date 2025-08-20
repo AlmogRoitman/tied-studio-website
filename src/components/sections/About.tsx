@@ -65,9 +65,9 @@ export default function About() {
             variants={slideInRight}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
-            className="relative"
+            className="relative flex justify-center"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl w-3/4">
               <motion.img
                 src="/images/portfolio/DSC04050.jpg"
                 alt="עבודה של Tied Studio - מיתוג חתונות"
