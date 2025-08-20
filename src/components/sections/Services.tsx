@@ -136,12 +136,6 @@ export default function Services() {
                 <p className="text-foreground/70 text-center leading-relaxed mb-8">
                   {service.description}
                 </p>
-                
-                {/* Decorative line */}
-                <motion.div
-                  className="w-0 h-0.5 bg-primary mx-auto mt-6 group-hover:w-12"
-                  transition={{ duration: 0.3 }}
-                />
               </motion.div>
             </motion.div>
           ))}
