@@ -168,29 +168,20 @@ function MobileMenu({
     <>
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`p-3 rounded-xl transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-secondary/30 text-navy border border-primary/10 shadow-md' 
-            : 'bg-white/10 text-white border border-white/20 backdrop-blur-md'
-        }`}
+        className="p-3 transition-all duration-300"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
         <div className="w-6 h-6 flex flex-col justify-center items-center">
           <motion.div
-            className={`w-5 h-0.5 bg-current mb-1.5 rounded-full transition-all duration-300 ${
-              isOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className="w-5 h-0.5 bg-black rounded-full absolute"
+            animate={isOpen ? { rotate: 45 } : { rotate: 0, y: -3 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           />
           <motion.div
-            className={`w-5 h-0.5 bg-current mb-1.5 rounded-full transition-all duration-300 ${
-              isOpen ? 'opacity-0' : ''
-            }`}
-          />
-          <motion.div
-            className={`w-5 h-0.5 bg-current rounded-full transition-all duration-300 ${
-              isOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className="w-5 h-0.5 bg-black rounded-full absolute"
+            animate={isOpen ? { rotate: -45 } : { rotate: 0, y: 3 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           />
         </div>
       </motion.button>

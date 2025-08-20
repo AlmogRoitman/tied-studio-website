@@ -199,7 +199,7 @@ export default function Portfolio() {
         >
           <div className="flex gap-6 justify-center">
             <motion.a
-              href="https://instagram.com/tiedstudio"
+              href="https://www.instagram.com/studio_tied?igsh=MTFqNXh4cGl4ODdnag=="
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-black hover:text-primary transition-all duration-300"
@@ -211,7 +211,7 @@ export default function Portfolio() {
               </svg>
             </motion.a>
             <motion.a
-              href="https://wa.me/972500000000?text=היי! אני מעוניין/ת בשירותי מיתוג חתונות של Tied Studio"
+              href="https://wa.me/972528014889?text=היי! אני מעוניין/ת בשירותי מיתוג חתונות של Tied Studio"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-black hover:text-primary transition-all duration-300"
