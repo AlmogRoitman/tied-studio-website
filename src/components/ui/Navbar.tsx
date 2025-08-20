@@ -172,16 +172,18 @@ function MobileMenu({
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="w-6 h-6 flex flex-col justify-center items-center">
+        <div className="w-8 h-8 flex flex-col justify-center items-center">
           <motion.div
-            className="w-5 h-0.5 bg-black rounded-full absolute"
-            animate={isOpen ? { rotate: 45 } : { rotate: 0, y: -3 }}
+            className="w-7 h-0.5 bg-black absolute"
+            animate={isOpen ? { rotate: 45 } : { rotate: 0, y: -4 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ height: '1px' }}
           />
           <motion.div
-            className="w-5 h-0.5 bg-black rounded-full absolute"
-            animate={isOpen ? { rotate: -45 } : { rotate: 0, y: 3 }}
+            className="w-7 h-0.5 bg-black absolute"
+            animate={isOpen ? { rotate: -45 } : { rotate: 0, y: 4 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{ height: '1px' }}
           />
         </div>
       </motion.button>
@@ -189,7 +191,7 @@ function MobileMenu({
       {/* Mobile Menu Overlay */}
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+          className="fixed inset-0 bg-black/60 z-40"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
