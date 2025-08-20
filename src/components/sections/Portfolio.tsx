@@ -106,7 +106,7 @@ export default function Portfolio() {
 
         {/* Portfolio Grid */}
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto mb-16"
+          className="flex justify-center gap-12 max-w-7xl mx-auto mb-16 flex-wrap"
           layout
         >
           {filteredItems.map((item, index) => (
@@ -117,7 +117,7 @@ export default function Portfolio() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group cursor-pointer"
+              className="group cursor-pointer w-80"
               onClick={() => openProject(item)}
             >
               <div className="relative overflow-hidden rounded-2xl shadow-lg bg-white">
