@@ -99,11 +99,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation - RTL Flow */}
           <div className="hidden lg:flex items-center">
-            <div className={`flex items-center gap-4 p-2 rounded-2xl transition-all duration-300 ${
-              isScrolled 
-                ? 'bg-secondary/30 shadow-inner border border-primary/10' 
-                : 'bg-white/10 backdrop-blur-md border border-white/20'
-            }`}>
+            <div className="flex items-center gap-8">
               {navigationItems.map((item) => {
                 const sectionId = item.href.substring(1);
                 const isActive = activeSection === sectionId;
@@ -112,19 +108,29 @@ export default function Navbar() {
                   <motion.button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className={`relative px-6 py-3 text-lg font-medium rounded-xl transition-all duration-300 ${
+                    className={`relative px-2 py-2 text-base font-medium transition-all duration-300 ${
                       isActive
                         ? isScrolled
-                          ? 'text-white bg-primary shadow-lg'
-                          : 'text-navy bg-white/90 shadow-lg backdrop-blur-sm'
+                          ? 'text-primary'
+                          : 'text-white'
                         : isScrolled
-                        ? 'text-navy hover:text-primary hover:bg-primary/10'
-                        : 'text-white hover:text-navy hover:bg-white/20 backdrop-blur-sm'
+                        ? 'text-navy hover:text-primary'
+                        : 'text-white hover:text-white/70'
                     }`}
-                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {item.name}
+                    {isActive && (
+                      <motion.div
+                        className={`absolute bottom-0 left-0 right-0 h-0.5 ${
+                          isScrolled ? 'bg-primary' : 'bg-white'
+                        }`}
+                        layoutId="activeTab"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                      />
+                    )}
                   </motion.button>
                 );
               })}
