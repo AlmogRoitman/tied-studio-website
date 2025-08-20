@@ -36,59 +36,22 @@ export default function Hero() {
         animate="animate"
         className="container mx-auto px-6 relative z-10 text-center space-y-8"
       >
-        {/* Company Name */}
+        {/* Company Logo Text */}
         <motion.div
           variants={textReveal}
           className="mb-12"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-navy mb-6 font-serif">
-            <span className="bg-gradient-to-l from-primary via-accent to-primary bg-clip-text text-transparent">
-              Tied Studio
-            </span>
-          </h1>
+          <div className="flex justify-center">
+            <img 
+              src="/images/portfolio/Logo_text.svg" 
+              alt="Tied Studio" 
+              className="h-24 md:h-32 lg:h-40 w-auto object-contain"
+            />
+          </div>
         </motion.div>
 
-        {/* Main Headline */}
-        <motion.div variants={fadeIn} className="mb-12">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy mb-6">
-            מיתוג חתונות מקצה לקצה
-          </h2>
-        </motion.div>
-
-        {/* Subheading */}
-        <motion.div variants={fadeIn} className="mb-20">
-          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            עיצוב אישי ויוקרתי לחתונה המושלמת שלכם
-          </p>
-        </motion.div>
-
-
-        {/* Decorative Elements */}
-        <motion.div
-          className="absolute top-1/4 right-10 w-20 h-20 rounded-full bg-accent/20"
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 left-10 w-16 h-16 rounded-full bg-primary/20"
-          animate={{
-            y: [0, 20, 0],
-            rotate: [360, 180, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
       </motion.div>
+
 
       {/* Scroll Indicator - Desktop (Mouse) */}
       <motion.div

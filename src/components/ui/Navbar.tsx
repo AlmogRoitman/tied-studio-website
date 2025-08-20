@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const navigationItems = [
@@ -17,7 +17,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const heroElement = document.getElementById('hero');
+      const heroHeight = heroElement ? heroElement.offsetHeight : window.innerHeight;
+      setIsScrolled(window.scrollY > heroHeight);
       
       // Update active section based on scroll position
       const sections = navigationItems.map(item => item.href.substring(1));
@@ -67,16 +69,30 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="flex items-center gap-3" style={{ direction: 'ltr' }}>
-              <span className={`font-bold text-2xl transition-colors duration-300 ${
-                isScrolled 
-                  ? 'text-navy' 
-                  : 'text-white drop-shadow-lg'
-              }`}>
-                Tied Studio
-              </span>
-              <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-primary rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">T</span>
+            <div className="flex items-center gap-6" style={{ direction: 'ltr' }}>
+              <AnimatePresence>
+                {isScrolled && (
+                  <motion.div
+                    className="h-6 flex items-center"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <img 
+                      src="/images/portfolio/Logo_text.svg" 
+                      alt="Tied Studio" 
+                      className="h-full object-contain"
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <div className="w-13 flex items-center justify-center">
+                <img 
+                  src="/images/portfolio/logo.svg" 
+                  alt="Tied Studio Logo Symbol" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
           </motion.div>
