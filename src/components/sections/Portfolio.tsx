@@ -192,7 +192,7 @@ export default function Portfolio() {
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-24"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}

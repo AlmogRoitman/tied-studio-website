@@ -8,7 +8,6 @@ const navigationItems = [
   { name: 'מי אנחנו', href: '#about' },
   { name: 'מה אנחנו עושות', href: '#services' },
   { name: 'עבודות', href: '#portfolio' },
-  { name: 'צרו קשר', href: '#contact' },
 ];
 
 export default function Navbar() {

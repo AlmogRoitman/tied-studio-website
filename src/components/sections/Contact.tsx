@@ -50,29 +50,6 @@ export default function Contact() {
   return (
     <section id="contact" className="section-spacing bg-gradient-to-b from-secondary/20 to-navy/5" ref={ref}>
       <div className="container mx-auto px-6">
-        <motion.div
-          variants={staggerContainer}
-          initial="initial"
-          animate={isInView ? "animate" : "initial"}
-          className="text-center mb-24"
-        >
-          <motion.h2
-            variants={fadeIn}
-            className="text-4xl md:text-5xl font-bold text-navy mb-6 font-serif"
-          >
-            בואו נכיר
-          </motion.h2>
-          <motion.div
-            variants={fadeIn}
-            className="w-24 h-1 bg-primary mx-auto mb-6"
-          />
-          <motion.p
-            variants={fadeIn}
-            className="text-xl text-foreground/80 max-w-3xl mx-auto mb-8"
-          >
-            מוכנים להתחיל את המסע לחתונה המושלמת? בואו נתכנן ביחד את המיתוג החלומי שלכם
-          </motion.p>
-        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-20 max-w-6xl mx-auto">
           {/* Contact Form */}
