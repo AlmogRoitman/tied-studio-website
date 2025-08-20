@@ -62,9 +62,7 @@ A modern Hebrew landing page for "Tied Studio" - a premium wedding branding serv
 │   │   │   ├── Hero.tsx       # Hero section with animations
 │   │   │   ├── About.tsx      # About section
 │   │   │   ├── Services.tsx   # Services section
-│   │   │   ├── WhyChooseUs.tsx
-│   │   │   ├── Portfolio.tsx  # Gallery with hover effects
-│   │   │   └── Contact.tsx    # Contact form with validation
+│   │   │   └── Portfolio.tsx  # Gallery with hover effects
 │   │   └── ui/               # Reusable UI components
 │   └── lib/
 │       ├── animations.ts     # Framer Motion animation variants
@@ -77,25 +75,24 @@ A modern Hebrew landing page for "Tied Studio" - a premium wedding branding serv
 ## 🎨 Design System
 
 ### Color Palette
-- **Primary**: `#c4968e` (Soft pink)
-- **Secondary**: `#f4e5d3` (Champagne)  
-- **Accent**: `#d4af37` (Gold)
-- **Navy**: `#2c3e50` (Deep navy)
-- **Background**: `#fefefe` (Off-white)
+- **Primary**: `#355923` (Forest green)
+- **Secondary**: `#F5F0E8` (Warm cream)  
+- **Navy**: `#111111` (Deep black)
+- **Background**: `#F5F0E8` (Warm cream)
+- **Foreground**: `#111111` (Deep black)
 
 ### Typography
-- **Primary Font**: Assistant (Hebrew optimized)
-- **Secondary Font**: Rubik (Hebrew optimized)
+- **Primary Font**: Heebo (Hebrew optimized)
+- **Font Weights**: 100 (Thin), 300, 400, 500, 700
 - **Font Loading**: Google Fonts with display=swap
 
 ### Sections Overview
 
-1. **Hero Section**: Company branding with animated text reveals and CTA
-2. **About Section**: Company story and unique approach
-3. **Services Section**: 8 key services with process timeline
-4. **Why Choose Us Section**: Value propositions and statistics
-5. **Portfolio Section**: Filterable gallery with hover animations
-6. **Contact Section**: Form validation, WhatsApp integration, social links
+1. **Hero Section**: Company branding with logo and descriptive subtitle
+2. **About Section**: Company story and personal approach
+3. **Services Section**: 2 main services (weddings & bachelorette parties) with 5-step process timeline
+4. **Portfolio Section**: 2 album categories with Instagram and WhatsApp integration
+5. **Footer**: Company branding and Hebrew tagline
 
 ## 🛠️ Technologies Used
 
@@ -191,9 +188,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support or questions about this project:
 
-- 📧 Email: hello@tiedstudio.co.il
-- 📱 WhatsApp: [Click to message](https://wa.me/972500000000)
-- 📸 Instagram: [@tiedstudio](https://instagram.com/tiedstudio)
+- 📱 WhatsApp: [Click to message](https://wa.me/972528014889)
+- 📸 Instagram: [@studio_tied](https://instagram.com/studio_tied)
 
 ---
 
