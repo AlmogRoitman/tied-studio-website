@@ -53,7 +53,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl">
-      <body className="font-sans antialiased">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="antialiased" style={{ fontFamily: 'Heebo, sans-serif', fontWeight: '100' }}>
         <Navbar />
         {children}
         <Footer />

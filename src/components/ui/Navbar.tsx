@@ -7,7 +7,7 @@ const navigationItems = [
   { name: 'בית', href: '#hero' },
   { name: 'מי אנחנו', href: '#about' },
   { name: 'מה אנחנו עושות', href: '#services' },
-  { name: 'עבודות', href: '#portfolio' },
+  { name: 'תיק עבודות', href: '#portfolio' },
 ];
 
 export default function Navbar() {

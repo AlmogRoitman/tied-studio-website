@@ -113,11 +113,11 @@ export default function Services() {
           
           <div className="space-y-12">
             {[
-              { step: "01", title: "היכרות קצרה", desc: "לומדות להכיר אתכם ואת האווירה שאתם רוצים לייצר." },
-              { step: "02", title: "בניית קונספט", desc: "מגדירות יחד צבעים, פונטים והשראות שיתחברו לסיפור שלכם." },
-              { step: "03", title: "עיצוב כל מה שצריך", desc: "מההזמנה ועד השלטים, מהתפריטים ועד פריטים קטנים למסיבה – הכול באותו קו אחיד." },
-              { step: "04", title: "הפקה והדפסה", desc: "דואגות שהכול יוצא מדויק, בזמן ובקו אחיד." },
-              { step: "05", title: "מסירה מסודרת", desc: "מקבלים חבילה נקייה ומוכנה, כך שהאירוע כולו נראה שלם וייחודי." }
+              { step: "1", title: "היכרות קצרה", desc: "לומדות להכיר אתכם ואת האווירה שאתם רוצים לייצר." },
+              { step: "2", title: "בניית קונספט", desc: "מגדירות יחד צבעים, פונטים והשראות שיתחברו לסיפור שלכם." },
+              { step: "3", title: "עיצוב כל מה שצריך", desc: "מההזמנה ועד השלטים, מהתפריטים ועד פריטים קטנים למסיבה – הכול באותו קו אחיד." },
+              { step: "4", title: "הפקה והדפסה", desc: "דואגות שהכול יוצא מדויק, בזמן ובקו אחיד." },
+              { step: "5", title: "מסירה מסודרת", desc: "מקבלים חבילה נקייה ומוכנה, כך שהאירוע כולו נראה שלם וייחודי." }
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -126,7 +126,7 @@ export default function Services() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.9 + index * 0.1 }}
               >
-                <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
                   {item.step}
                 </div>
                 <div>

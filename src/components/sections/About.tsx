@@ -49,7 +49,7 @@ export default function About() {
             </div>
 
             <div className="mb-12">
-              <h4 className="text-xl font-semibold text-navy mb-4">
+              <h4 className="text-2xl md:text-3xl font-bold text-navy mb-4">
                 הגישה האישית שלנו
               </h4>
               <p className="text-lg text-foreground/80 leading-relaxed">
@@ -77,20 +77,6 @@ export default function About() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
             </div>
-            
-            {/* Decorative element */}
-            <motion.div
-              className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full -z-10"
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 180, 360],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
           </motion.div>
         </div>
       </div>
