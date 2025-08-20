@@ -95,10 +95,6 @@ export default function Portfolio() {
           >
             תיק עבודות
           </motion.h2>
-          <motion.div
-            variants={fadeIn}
-            className="w-24 h-1 bg-primary mx-auto mb-6"
-          />
           <motion.p
             variants={fadeIn}
             className="text-xl text-foreground/80 mx-auto mb-8"

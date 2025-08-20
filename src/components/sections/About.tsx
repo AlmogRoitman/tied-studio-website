@@ -24,10 +24,6 @@ export default function About() {
           >
             מי אנחנו
           </motion.h2>
-          <motion.div
-            variants={fadeIn}
-            className="w-24 h-1 bg-primary mx-auto"
-          />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">

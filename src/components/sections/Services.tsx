@@ -58,17 +58,13 @@ export default function Services() {
           >
             מה אנחנו עושות
           </motion.h2>
-          <motion.div
-            variants={fadeIn}
-            className="w-24 h-1 bg-primary mx-auto mb-16"
-          />
         </motion.div>
 
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16"
+          className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16 mt-12"
         >
           {services.map((service, index) => (
             <motion.div
@@ -101,17 +97,17 @@ export default function Services() {
         </motion.div>
 
         {/* Process Timeline */}
-        <motion.div
-          className="mt-32 max-w-4xl mx-auto mb-12"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-        >
-          <h3 className="text-3xl font-bold text-navy text-center mb-20">
+        <div className="mt-32 flex flex-col items-center">
+          <motion.h3 
+            className="text-3xl font-bold text-navy text-center mb-20"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.8 }}
+          >
             תהליך עבודה
-          </h3>
+          </motion.h3>
           
-          <div className="space-y-12">
+          <div className="space-y-12 max-w-2xl">
             {[
               { step: "1", title: "היכרות קצרה", desc: "לומדות להכיר אתכם ואת האווירה שאתם רוצים לייצר." },
               { step: "2", title: "בניית קונספט", desc: "מגדירות יחד צבעים, פונטים והשראות שיתחברו לסיפור שלכם." },
@@ -126,7 +122,7 @@ export default function Services() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.9 + index * 0.1 }}
               >
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-white font-bold text-base flex-shrink-0">
                   {item.step}
                 </div>
                 <div>
@@ -136,7 +132,7 @@ export default function Services() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
