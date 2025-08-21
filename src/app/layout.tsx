@@ -4,8 +4,8 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 
 export const metadata: Metadata = {
-  title: "Tied Studio - מיתוג חתונות מקצה לקצה",
-  description: "עיצוב אישי ויוקרתי לחתונה המושלמת שלכם. מיתוג חתונות מקצה לקצה עם לווי צמוד ותיאום מקצועי.",
+  title: "Tied Studio",
+  description: "סטודיו לעיצוב ומיתוג לחתונות ורווקות - שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם",
   keywords: "מיתוג חתונות, עיצוב חתונות, הזמנות לחתונה, דפוס חתונות, סייב דה דייט",
   authors: [{ name: "Tied Studio" }],
   creator: "Tied Studio",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Tied Studio - מיתוג חתונות מקצה לקצה",
-    description: "עיצוב אישי ויוקרתי לחתונה המושלמת שלכם",
+    title: "Tied Studio",
+    description: "סטודיו לעיצוב ומיתוג לחתונות ורווקות - שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם",
     url: 'https://studio-tied.vercel.app',
     siteName: 'Tied Studio',
     locale: 'he_IL',
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Tied Studio - מיתוג חתונות מקצה לקצה",
-    description: "עיצוב אישי ויוקרתי לחתונה המושלמת שלכם",
+    title: "Tied Studio",
+    description: "סטודיו לעיצוב ומיתוג לחתונות ורווקות - שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם",
     images: ['/og-image.png'],
   },
 };
