@@ -53,6 +53,12 @@ export default function Portfolio() {
 
   const filteredItems = portfolioItems;
 
+  // Helper function to get thumbnail path
+  const getThumbnailPath = (folder: string, image: string) => {
+    const nameWithoutExt = image.replace(/\.[^/.]+$/, "");
+    return `/images/portfolio/${folder}/thumbs/${nameWithoutExt}_thumb.jpg`;
+  };
+
   const openProject = (project: PortfolioItem) => {
     if (project.allImages && project.allImages.length > 0) {
       setSelectedProject(project);
@@ -285,7 +291,7 @@ export default function Portfolio() {
                     whileHover={{ scale: index === currentImageIndex ? 1.1 : 1.05 }}
                   >
                     <img
-                      src={`/images/portfolio/${selectedProject.folder}/${image}`}
+                      src={getThumbnailPath(selectedProject.folder!, image)}
                       alt={`תמונה ${index + 1}`}
                       className="w-full h-full object-cover"
                     />
