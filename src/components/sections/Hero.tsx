@@ -54,7 +54,7 @@ export default function Hero() {
               className="text-xl md:text-2xl lg:text-3xl font-semibold text-navy/90 max-w-4xl leading-relaxed text-center"
               style={{ textAlign: 'center' }}
             >
-              סטודיו לעיצוב ומיתוג לאירועים: חתונות ורווקות. שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם.
+              סטודיו לעיצוב ומיתוג לחתונות ומסיבות רווקות<br />שפה עיצובית אחידה, מותאמת אישית, שמרגישה בדיוק שלכם
             </motion.h2>
           </div>
         </motion.div>

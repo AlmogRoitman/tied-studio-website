@@ -9,12 +9,12 @@ const services = [
   {
     title: "מיתוג חתונה",
     bulletPoints: [
-      "קונספט ושפה: צבעים, טיפוגרפיה, אלמנטים גרפיים וגריד.",
-      "הזמנות: Save the Date, הזמנה - דיגיטלית/מודפסת.",
-      "יום האירוע: לוח הושבה, מספרי שולחן, תפריטים, כרטיסי שם, שילוט.",
-      "מסיבה: פרופס שייחודיים רק לכם.",
-      "דיגיטל: עמוד/אתר חתונה.",
-      "הפקה: קבצים לדפוס, בדיקות חומרים."
+      "<span class=\"text-primary font-bold\">קונספט ושפה</span> - צבעים, טיפוגרפיה, אלמנטים גרפיים וגריד.",
+      "<span class=\"text-primary font-bold\">הזמנות</span> - Save the Date, הזמנה - דיגיטלית/מודפסת.",
+      "<span class=\"text-primary font-bold\">יום האירוע</span> - לוח הושבה, מספרי שולחן, תפריטים, כרטיסי שם, שילוט.",
+      "<span class=\"text-primary font-bold\">מסיבה</span> - פרופס שייחודיים רק לכם.",
+      "<span class=\"text-primary font-bold\">דיגיטל</span> - עמוד/אתר חתונה.",
+      "<span class=\"text-primary font-bold\">הפקה</span> - קבצים לדפוס, בדיקות חומרים."
     ],
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -26,10 +26,10 @@ const services = [
     title: "מיתוג מסיבת רווקות",
     bulletPoints: [
       "קונספט בהתאמה לכלה והחבורה.",
-      "עיצוב חבילה ממותגת: הזמנה, מדבקות.",
-      "קיטים אישיים: תגי שם, גלויות, אריזות מתנה, מדבקות לבקבוקים/כוסות.",
-      "דיגיטל: סטוריז, רקעים.",
-      "הפקה: קבצים לדפוס/בית דפוס, התאמות חומרים."
+      "<span class=\"text-primary font-bold\">עיצוב חבילה ממותגת</span> - הזמנה, מדבקות.",
+      "<span class=\"text-primary font-bold\">קיטים אישיים</span> - תגי שם, גלויות, אריזות מתנה, מדבקות לבקבוקים/כוסות.",
+      "<span class=\"text-primary font-bold\">דיגיטל</span> - סטוריז, רקעים.",
+      "<span class=\"text-primary font-bold\">הפקה</span> - קבצים לדפוס/בית דפוס, התאמות חומרים."
     ],
     icon: (
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
@@ -87,7 +87,7 @@ export default function Services() {
                   {service.bulletPoints?.map((point, i) => (
                     <div key={i} className="flex items-start gap-3" style={{ paddingBottom: '6px' }}>
                       <span className="text-primary mt-1 flex-shrink-0 text-lg">•</span>
-                      <span className="text-foreground/80 leading-relaxed text-base">{point}</span>
+                      <span className="text-foreground/80 leading-relaxed text-base" dangerouslySetInnerHTML={{__html: point}}></span>
                     </div>
                   ))}
                 </div>
