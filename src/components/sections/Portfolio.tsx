@@ -50,6 +50,8 @@ export default function Portfolio() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [selectedProject, setSelectedProject] = useState<PortfolioItem | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const filteredItems = portfolioItems;
 
@@ -84,6 +86,31 @@ export default function Portfolio() {
       setCurrentImageIndex((prev) => 
         prev === 0 ? selectedProject.allImages!.length - 1 : prev - 1
       );
+    }
+  };
+
+  // Touch handlers for swipe functionality
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      nextImage();
+    } else if (isRightSwipe) {
+      prevImage();
     }
   };
 
@@ -241,6 +268,9 @@ export default function Portfolio() {
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3 }}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
             >
               <img
                 src={`/images/portfolio/${selectedProject.folder}/${selectedProject.allImages?.[currentImageIndex]}`}
@@ -249,11 +279,11 @@ export default function Portfolio() {
               />
             </motion.div>
 
-            {/* Navigation Arrows */}
+            {/* Navigation Arrows - Hidden on Mobile */}
             {selectedProject.allImages && selectedProject.allImages.length > 1 && (
               <>
                 <motion.button
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full items-center justify-center text-white hover:bg-white/30 transition-colors"
                   onClick={prevImage}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
@@ -264,7 +294,7 @@ export default function Portfolio() {
                 </motion.button>
 
                 <motion.button
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+                  className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full items-center justify-center text-white hover:bg-white/30 transition-colors"
                   onClick={nextImage}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
