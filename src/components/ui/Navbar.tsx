@@ -68,7 +68,7 @@ export default function Navbar() {
     <motion.nav
       className={`navbar fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/98 backdrop-blur-xl shadow-xl'
+          ? 'bg-white/98 backdrop-blur-xl'
           : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent backdrop-blur-sm'
       }`}
       style={{ direction: 'ltr' }}
