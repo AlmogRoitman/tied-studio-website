@@ -22,7 +22,7 @@ const portfolioItems: PortfolioItem[] = [
     title: "חתונות",
     category: "חתונות",
     description: "מיתוג מלא לחתונה בסגנון רומנטי עם פרטים מוזהבים",
-    folder: "dana-almog",
+    folder: "wedding",
     mainImage: "DSC05379.jpg",
     allImages: [
       "DSC05379.jpg", "DSC05852.jpg", "DSC05900.jpg", "DSCF9633.jpg", 
@@ -36,10 +36,11 @@ const portfolioItems: PortfolioItem[] = [
     title: "מסיבות רווקות",
     category: "מסיבות רווקות",
     description: "עיצוב ומיתוג למסיבות רווקות מיוחדות",
-    folder: "dana-almog", // Using same folder for now, you can change this later
-    mainImage: "DSC05379.jpg", // You can specify different image
+    folder: "bachelorette",
+    mainImage: "IMG_3590.JPG",
     allImages: [
-      "DSC05379.jpg", "DSC05852.jpg", "DSC05900.jpg", "DSCF9633.jpg", "DSCF9687.jpg"
+      "IMG_3568.JPG", "IMG_3583.JPG", "IMG_3589.jpg", "IMG_3590.JPG", 
+      "IMG_3591.jpg", "IMG_3650.JPG", "IMG_3698.jpg", "IMG_4263.JPG"
     ],
   },
 ];
