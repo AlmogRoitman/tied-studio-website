@@ -9,7 +9,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden hero-spacing">
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden hero-spacing">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-background to-primary/20" />
@@ -91,7 +91,7 @@ export default function Hero() {
 
       {/* Scroll Indicator - Mobile (Hand Swipe) */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 md:hidden"
+        className="absolute bottom-43 left-1/2 transform -translate-x-1/2 md:hidden"
       >
         <div className="flex flex-col items-center">
           {/* Upward arrow */}
