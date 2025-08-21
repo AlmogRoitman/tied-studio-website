@@ -65,13 +65,14 @@ export default function Hero() {
       {/* Scroll Indicator - Desktop (Mouse) */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
+        initial={{ opacity: 0 }}
         animate={{
+          opacity: 1,
           y: [0, 10, 0],
         }}
         transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
+          opacity: { delay: 1.5, duration: 0.5 },
+          y: { delay: 1.5, duration: 2, repeat: Infinity, ease: "easeInOut" },
         }}
       >
         <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
@@ -81,6 +82,7 @@ export default function Hero() {
               opacity: [0, 1, 0],
             }}
             transition={{
+              delay: 1.5,
               duration: 2,
               repeat: Infinity,
               ease: "easeInOut",
@@ -91,7 +93,10 @@ export default function Hero() {
 
       {/* Scroll Indicator - Mobile (Hand Swipe) */}
       <motion.div
-        className="absolute bottom-43 left-1/2 transform -translate-x-1/2 md:hidden"
+        className="absolute bottom-37 left-1/2 transform -translate-x-1/2 md:hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.5 }}
       >
         <div className="flex flex-col items-center">
           {/* Upward arrow */}
@@ -101,6 +106,7 @@ export default function Hero() {
               y: [10, -8, 10],
             }}
             transition={{
+              delay: 1.5,
               duration: 2,
               repeat: Infinity,
               ease: "easeInOut",
