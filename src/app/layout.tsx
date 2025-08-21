@@ -18,14 +18,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://tied-studio-website.vercel.app'),
+  metadataBase: new URL('https://studio-tied.vercel.app'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: "Tied Studio - מיתוג חתונות מקצה לקצה",
     description: "עיצוב אישי ויוקרתי לחתונה המושלמת שלכם",
-    url: 'https://tied-studio-website.vercel.app',
+    url: 'https://studio-tied.vercel.app',
     siteName: 'Tied Studio',
     locale: 'he_IL',
     type: 'website',
