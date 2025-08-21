@@ -97,7 +97,7 @@ export default function Navbar() {
                   >
                     <img 
                       src="/images/portfolio/Logo_text.svg" 
-                      alt="Tied Studio" 
+                      alt="Studio Tied" 
                       className="h-full object-contain"
                     />
                   </motion.div>
@@ -106,7 +106,7 @@ export default function Navbar() {
               <div className="w-13 flex items-center justify-center">
                 <img 
                   src="/images/portfolio/logo.svg" 
-                  alt="Tied Studio Logo Symbol" 
+                  alt="Studio Tied Logo Symbol" 
                   className="w-full h-full object-contain"
                 />
               </div>

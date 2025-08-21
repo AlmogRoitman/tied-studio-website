@@ -44,7 +44,7 @@ export default function Hero() {
           <div className="flex justify-center mb-12">
             <img 
               src="/images/portfolio/Logo_text.svg" 
-              alt="Tied Studio" 
+              alt="Studio Tied" 
               className="h-24 md:h-32 lg:h-40 w-auto object-contain"
             />
           </div>

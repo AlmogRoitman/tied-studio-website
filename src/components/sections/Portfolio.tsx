@@ -216,7 +216,7 @@ export default function Portfolio() {
               </svg>
             </motion.a>
             <motion.a
-              href="https://wa.me/972528014889?text=היי! אני מעוניין/ת בשירותי מיתוג חתונות של Tied Studio"
+              href="https://wa.me/972528014889?text=היי! אני מעוניין/ת בשירותי מיתוג חתונות של Studio Tied"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center text-black hover:text-primary transition-all duration-300"

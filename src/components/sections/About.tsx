@@ -59,7 +59,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl w-3/4">
               <motion.img
                 src="/images/portfolio/DSC04050.jpg"
-                alt="עבודה של Tied Studio - מיתוג חתונות"
+                alt="עבודה של Studio Tied - מיתוג חתונות"
                 className="w-full h-auto object-cover"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}

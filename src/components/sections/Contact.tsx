@@ -43,7 +43,7 @@ export default function Contact() {
   };
 
   const openWhatsApp = () => {
-    const message = encodeURIComponent('היי! אני מעוניין/ת בשירותי מיתוג חתונות של Tied Studio');
+    const message = encodeURIComponent('היי! אני מעוניין/ת בשירותי מיתוג חתונות של Studio Tied');
     window.open(`https://wa.me/972500000000?text=${message}`, '_blank');
   };
 
