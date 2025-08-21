@@ -16,9 +16,15 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroElement = document.getElementById('hero');
-      const heroHeight = heroElement ? heroElement.offsetHeight : window.innerHeight;
-      setIsScrolled(window.scrollY > heroHeight);
+      // Try multiple ways to get scroll position
+      const windowScrollY = window.pageYOffset || 0;
+      const docScrollY = document.documentElement.scrollTop || 0;
+      const bodyScrollY = document.body.scrollTop || 0;
+      const scrollY = Math.max(windowScrollY, docScrollY, bodyScrollY);
+      
+      const shouldBeScrolled = scrollY > 300;
+      
+      setIsScrolled(shouldBeScrolled);
       
       // Update active section based on scroll position
       const sections = navigationItems.map(item => item.href.substring(1));
@@ -36,8 +42,19 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Call immediately to set initial state
+    handleScroll();
+    
+    // Listen for scroll on multiple elements
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    document.body.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('scroll', handleScroll);
+      document.body.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollToSection = (href: string) => {
