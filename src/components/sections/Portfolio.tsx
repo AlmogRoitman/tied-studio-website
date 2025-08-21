@@ -278,7 +278,7 @@ export default function Portfolio() {
 
             {/* Thumbnail Strip */}
             {selectedProject.allImages && selectedProject.allImages.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-2 max-w-full overflow-x-auto">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-white/10 backdrop-blur-sm rounded-lg p-3 max-w-full overflow-x-auto h-17">
                 {selectedProject.allImages.map((image, index) => (
                   <motion.button
                     key={image}
